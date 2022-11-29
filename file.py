@@ -1,10 +1,11 @@
 import numpy as np
 import cv2
-url="http://192.168.159.107:8080/video"
+url="http://192.168.159.107:8080/video" #ip address of camera. or source
 capture=cv2.VideoCapture(url)
 #define video codec
 fourcc=cv2.VideoWriter_fourcc(*'XVID')
 out=cv2.VideoWriter('output.avi', fourcc, 20.0, (640, 480))#contains the output filename, fps as 20 and frame size
+#size in camera must mat
 while True:
     ret, frame= capture.read()
     if not ret:
